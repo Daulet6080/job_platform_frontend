@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+Job Platform Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Добро пожаловать в репозиторий frontend-части платформы для поиска работы! 🚀
 
-## Available Scripts
+📚 Описание проекта
 
-In the project directory, you can run:
+Job Platform Frontend — это веб-приложение, которое помогает студентам, начинающим IT-специалистам и соискателям находить подходящие вакансии, создавать резюме и взаимодействовать с работодателями.
 
-### `npm start`
+🛠️ Технологический стек
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React — библиотека для создания пользовательских интерфейсов
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Vite — для быстрой сборки проекта
 
-### `npm test`
+TailwindCSS — для стилизации компонентов
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React Router — для маршрутизации
 
-### `npm run build`
+Axios — для работы с API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🚀 Запуск проекта
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Клонируйте репозиторий:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/ваш-репозиторий/job_platform_frontend.git
 
-### `npm run eject`
+Перейдите в папку проекта:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd job_platform_frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Установите зависимости:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Запустите проект:
 
-## Learn More
+npm run dev
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Приложение будет доступно по адресу http://localhost:5173.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📂 Структура проекта
 
-### Code Splitting
+├── public/                  # Публичные файлы
+├── src/                     # Исходный код приложения
+│   ├── components/          # UI-компоненты
+│   ├── pages/               # Страницы приложения
+│   ├── hooks/              # Кастомные хуки
+│   ├── services/           # API-сервисы
+│   └── App.jsx             # Основной компонент приложения
+├── .env                    # Переменные окружения
+├── vite.config.js          # Конфигурация Vite
+└── package.json           # Зависимости и скрипты
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📩 Переменные окружения
 
-### Analyzing the Bundle Size
+Создайте файл .env в корне проекта и добавьте:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+VITE_API_URL=https://api.jobplatform.com
 
-### Making a Progressive Web App
+🔧 Основные фичи
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📄 Поиск и фильтрация вакансий
 
-### Advanced Configuration
+🧑‍💻 Создание и редактирование резюме
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+💬 Чат с работодателями
 
-### Deployment
+📊 Дашборд со статистикой по откликам
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🔔 Уведомления о новых вакансиях
 
-### `npm run build` fails to minify
+👨‍💻 Вклад в проект
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Мы будем рады вашим идеям и улучшениям! Если хотите внести вклад:
+
+Форкните репозиторий
+
+Создайте новую ветку: git checkout -b feature/ваша-фича
+
+Сделайте коммиты изменений: git commit -m 'Добавил новую фичу'
+
+Отправьте изменения: git push origin feature/ваша-фича
+
+Создайте Pull Request
