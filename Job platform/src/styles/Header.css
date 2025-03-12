@@ -1,0 +1,35 @@
+/* Стили для изображения с классом 'location' */
+.call, .user {
+    width: 18px;  /* Задаем ширину */
+    height: auto;  /* Высота подстраивается автоматически */
+    margin-right: 2px;  /* Отступ справа */
+  }
+.contact, .voiti {
+    display: flex;
+    align-items: center;
+}
+header {
+    display: flex;
+    justify-content: space-between; /* Разделяем элементы: одни слева, другие справа */
+    align-items: center; /* Центрируем элементы по вертикали */
+  }
+
+.headcontent{
+    display: flex;
+    align-items: center;
+}
+p{
+    font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff;
+}
+.hel{
+    margin-right: 45px;
+}
+.contact p:hover, .voiti p:hover{
+    color: #43a458;
+}
+a{
+    text-decoration: none;
+}
+.voiti{
+    margin-right: 25px;
+}

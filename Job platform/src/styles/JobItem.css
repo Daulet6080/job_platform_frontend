@@ -1,0 +1,43 @@
+.product-item {
+    border: 1px solid #ddd; /* Тонкая граница вокруг товара */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация при наведении */
+    background-color: white; /* Белый фон для контраста */
+    text-align: center; /* Центрирование контента */
+    padding: 15px; /* Внутренние отступы */ 
+  }
+
+  .product-item h3{
+    color: #333;
+  }
+
+  .product-item:hover {
+    transform: translateY(-5px); /* Легкий подъем при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+  }
+  
+  .product-image {
+    border-radius: 10px; /* Скругленные углы для картинки */
+    margin-bottom: 15px; /* Отступ снизу для заголовка */
+    width: 200px; /* Установите фиксированную ширину */
+    height: 150px; /* Установите фиксированную высоту */
+    object-fit: cover; 
+  }
+
+
+  
+  .product-name {
+    font-size: 18px; /* Размер текста для названия товара */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #333; /* Темный цвет текста */
+  }
+  
+  .product-price {
+    font-size: 16px; /* Размер текста для цены */
+    color: #ff6600; /* Яркий цвет для цены */
+    font-weight: bold; /* Жирный шрифт */
+  }
+  
+  

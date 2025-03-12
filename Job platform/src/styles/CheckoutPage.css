@@ -1,0 +1,104 @@
+/* Стили для карточки товара на странице оформления заказа */
+.checkout-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkout-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 220px;
+    background-color: #fff;
+  }
+  
+  .checkout-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+  
+  .checkout-item h3 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 8px;
+  }
+  
+  .checkout-item p {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 12px;
+  }
+  
+  .checkout-item .price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+  }
+  
+  /* Стили для общей страницы оформления заказа */
+  .checkout-page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Кнопка оформления заказа */
+  .checkout-button {
+    background-color: #28a745; /* Зеленая для оформления */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .checkout-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Стили для формы данных покупателя */
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .checkout-form input,
+  .checkout-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .checkout-form input:focus,
+  .checkout-form textarea:focus {
+    outline: none;
+    border-color: #80bdff;
+  }
+  
+  .checkout-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .checkout-form button:hover {
+    background-color: #0056b3;
+  }
+  

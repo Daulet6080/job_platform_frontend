@@ -1,0 +1,47 @@
+/* Основной контейнер для баннера */
+.banner-carousel {
+    position: relative;
+    width: 75%;
+    height: 250px; /* Высота баннера */
+    margin: 20px auto; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+/* Изображения баннера */
+.banner-image {
+    width: 100%;
+    height: 100%;         /* Заполнение пространства по высоте контейнера */
+    object-fit: cover;    /* Корректное заполнение контейнера изображением */
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 10px;  /* Округление углов изображения */
+  }
+
+  /* Контейнер для пагинации (точек) */
+.pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;  /* Расстояние между точками */
+  }
+  
+  /* Точки пагинации */
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный цвет */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Активная точка */
+  .dot.active {
+    background-color: rgba(255, 255, 255, 1); /* Полностью белая точка */
+  }
+  

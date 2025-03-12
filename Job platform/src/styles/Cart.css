@@ -1,0 +1,126 @@
+/* Стили для карточки товара в корзине */
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.cart p{
+    color: #727272;
+    font-size: 20px;
+}
+.cart-item {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 220px;
+    background-color: #fff;
+  }
+  
+  .cart-item img {
+    width: 120px; /* Фиксированная ширина */
+    height: 120px; /* Фиксированная высота */
+    object-fit: cover; /* Обеспечивает сохранение пропорций, обрезая лишнее */
+    border-radius: 8px; /* Добавляет скругленные углы, если нужно */
+    margin-bottom: 12px;
+  }
+  
+  
+  .cart-item h3 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 8px;
+  }
+  
+  .cart-item p {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 12px;
+  }
+  
+  .cart-item .price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+  }
+  
+  /* Кнопка для удаления из корзины */
+  .cart-item button {
+    background-color: #dc3545; /* Красный для удаления */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .cart-item button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Стили для общей корзины */
+  .cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  /* Стиль для контейнера корзины */
+  .cart-page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  .remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cart-total {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #5e5e5e;
+  }
+  
+  .checkout-btn {
+    padding: 10px 20px;
+    background-color: #43a458;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .checkout-btn:hover{
+    background-color: #3b8a4c;
+  }
+  .cart-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #616161;
+    font-size: 12px;
+  }
+  .cart-info p{
+    color: #43a458;
+  }
+  .cartcont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

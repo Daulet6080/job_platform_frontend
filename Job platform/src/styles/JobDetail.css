@@ -1,0 +1,112 @@
+/* ProductDetail.css */
+
+/* Основной контейнер для деталей продукта */
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto; /* Уменьшена отступ сверху и снизу */
+    padding: 20px;
+    max-width: 300px; /* Ограничение ширины контейнера, как у карточек категории */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-detail img {
+    width: 100%; /* Изображение будет занимать всю ширину контейнера */
+    max-width: 150px; /* Ограничиваем максимальную ширину изображения */
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  
+  .product-detail h1 {
+    font-size: 1.5rem; /* Уменьшенный размер заголовка */
+    margin: 10px 0;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .product-detail .price {
+    font-size: 1.2rem; /* Уменьшенный размер цены */
+    color: #43a458;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .product-detail p {
+    font-size: 1rem; /* Уменьшенный размер описания */
+    color: #505050;
+    text-align: center;
+    margin: 5px 0;
+    line-height: 1.4;
+  }
+  
+  /* Дополнительные стили для кнопки или других элементов */
+  .product-detail button {
+    padding: 8px 16px;
+    background-color: #43a458;
+    color: white;
+    border: none;   
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .product-detail button:hover {
+    background-color: #398b4a;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .product-detail {
+      margin: 15px;
+      padding: 15px;
+      max-width: 90%; /* Контейнер будет занимать большую часть экрана на мобильных устройствах */
+    }
+  
+    .product-detail img {
+      max-width: 100%; /* Изображение будет занимать всю ширину на мобильных устройствах */
+    }
+  
+    .product-detail h1 {
+      font-size: 1.3rem; /* Уменьшение заголовка на мобильных устройствах */
+    }
+  
+    .product-detail .price {
+      font-size: 1.1rem; /* Уменьшение цены на мобильных устройствах */
+    }
+  
+    .product-detail p {
+      font-size: 0.9rem; /* Уменьшение текста описания на мобильных устройствах */
+    }
+  }
+
+  /* ProductDetail.css */
+
+/* Стиль кнопки "Добавить в корзину" */
+.add-to-cart-btn {
+    background-color: #43a458;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #3a8b74;
+  }
+  
+  .add-to-cart-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  

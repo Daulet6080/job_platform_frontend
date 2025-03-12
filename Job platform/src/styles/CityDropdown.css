@@ -1,0 +1,39 @@
+.city-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.city-button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff; font-weight: bold;
+    background-color: #071222;;
+  }
+  
+  .dropdown-menu {
+    position: absolute; /* Меню будет отображаться поверх других элементов */
+    background-color:#07122200; /* Белый фон */
+    border-radius: 15px; /* Скругленные углы */
+    margin-top: 2px; /* Отступ сверху */
+    width: 150px; /* Фиксированная ширина */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта всплывающего окна */
+    z-index: 1000; /* Поверх других элементов */
+  }
+  
+  /* Элементы внутри выпадающего меню */
+  .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-bottom: 1px solid #eee; /* Линия-разделитель между элементами */
+    background-color:#071222;/* Белый фон по умолчанию */
+    transition: background-color 0.2s ease; /* Плавный переход фона при наведении */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  

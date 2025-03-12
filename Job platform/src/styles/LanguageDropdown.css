@@ -1,0 +1,31 @@
+/* Стиль для кнопки выбора языка */
+.language-button {
+    padding: 10px 20px;
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругленные углы */
+    cursor: pointer; /* Указатель курсора при наведении */
+    position: relative;
+    background-color: #071222;
+    font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff; font-weight: bold;
+  }
+    
+  .language-button:hover, .city-button:hover{
+    color: #43a458;
+  }
+
+  /* При наведении мыши на элемент */
+  .dropdown-item:hover {
+    background-color: #43a458; /* Светло-серый фон при наведении */
+  }
+  
+  /* Последний элемент без нижней границы */
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Контейнер для всего выпадающего меню */
+  .language-dropdown {
+    position: relative; /* Это нужно для правильного позиционирования меню относительно кнопки */
+    display: inline-block; /* Блоковое отображение */
+  }
+  

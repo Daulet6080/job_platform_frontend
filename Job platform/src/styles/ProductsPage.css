@@ -1,0 +1,72 @@
+ .products-page {
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+    
+ .filter-container {
+    margin-bottom: 20px;
+  }
+    
+  input {
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  .product-item img{
+    border-radius: 10px; /* Скругленные углы для картинки */
+    margin-bottom: 15px; /* Отступ снизу для заголовка */
+    width: 200px; /* Установите фиксированную ширину */
+    height: 150px; /* Установите фиксированную высоту */
+    object-fit: cover; 
+  }
+  h1{
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #43a458; /* Зеленый фон */
+    color: #ffffff; /* Белый текст */
+    padding: 15px; /* Внутренний отступ */
+    border-radius: 10px; /* Скругленные углы */
+    margin-bottom: 20px; /* Отступ между заголовком и сеткой */
+    display: inline-block; /* Ограничиваем ширину только текстом */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
+  }
+  .product-item {
+    border: 1px solid #ddd; /* Тонкая граница вокруг товара */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация при наведении */
+    background-color: white; /* Белый фон для контраста */
+    text-align: center; /* Центрирование контента */
+    padding: 15px; /* Внутренние отступы */ 
+  }
+
+  .product-item h3{
+    color: #333;
+  }
+
+  .product-item:hover {
+    transform: translateY(-5px); /* Легкий подъем при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+  }
+  
+  .product-name {
+    font-size: 18px; /* Размер текста для названия товара */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #333; /* Темный цвет текста */
+  }
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Гибкая сетка для адаптации */
+    gap: 20px; /* Отступы между элементами */
+    margin: 20px; /* Внешние отступы для всего списка */
+    padding: 0;
+    list-style: none;
+  }
+.product-list p{
+    color: #43a458;
+}
+  
