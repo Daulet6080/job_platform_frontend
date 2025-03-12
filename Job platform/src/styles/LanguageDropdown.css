@@ -10,12 +10,12 @@
   }
     
   .language-button:hover, .city-button:hover{
-    color: #43a458;
+    color: #58c3bd;
   }
 
   /* При наведении мыши на элемент */
   .dropdown-item:hover {
-    background-color: #43a458; /* Светло-серый фон при наведении */
+    background-color: #58c3bd; /* Светло-серый фон при наведении */
   }
   
   /* Последний элемент без нижней границы */

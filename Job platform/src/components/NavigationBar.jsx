@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MessageOutlined } from '@ant-design/icons';
 import '../styles/NavigationBar.css';
 
 export default function NavigationBar({ onSearch }) {
@@ -22,6 +23,10 @@ export default function NavigationBar({ onSearch }) {
 
   const handleCartClick = () => {
     navigate('/cart');
+  };
+
+  const goToChat = () => {
+    navigate('/chat');
   };
 
   return (
@@ -52,6 +57,10 @@ export default function NavigationBar({ onSearch }) {
           <div className="icon cart-icon" onClick={handleCartClick}>
             <img src="/corsina.png" alt="Корзина" />
             <p>Корзина</p>
+          </div>
+          <div className="icon chat-icon" onClick={goToChat}>
+            <MessageOutlined style={{ fontSize: '24px', cursor: 'pointer' }} />
+            <p>Чат</p>
           </div>
         </div>
       </nav>
