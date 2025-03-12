@@ -1,85 +1,87 @@
 /* Основной стиль для навигационной панели */
 .navigation-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ccc;
-    height: 70px;
-  }
-  
-  /* Стили для логотипа */
-  .logo img {
-    width: 120px; /* Ширина логотипа */
-    height: 60px; /* Автоматическая высота */
-    cursor: pointer;
-  }
-  
-  /* Контейнер для поиска */
-  .search-container {
-    display: flex;
-    align-items: center;
-    width: 40%; /* Ширина контейнера поиска */
-  }
-  
-  /* Поле для ввода текста */
-  .search-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px; /* Скругляем углы с левой стороны */
-    outline: none;
-    margin-top: 20px;
-  }
-  
-  /* Кнопка поиска */
-  .search-button {
-    padding: 10px 20px;
-    background-color: #43a458;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0; /* Скругляем углы с правой стороны */
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #2e683a; /* Цвет при наведении */
-  }
-  
-  .search{
-    width: 16px; /* Размер иконки поиска */
-    height: auto;
-    margin-right: 5px; /* Отступ между иконкой и текстовым полем */
-  }
-  /* Контейнер для иконок */
-  .nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Отступ между иконками */
-  }
-  
-  /* Стили для каждой иконки */
-  .icon {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .icon img {
-    width: 24px;
-    height: auto;
-    margin-right: 8px;
-  }
-  
-  .icon p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0;
-    color: rgba(0, 0, 0, 0.499);
-  }
-  .icon p:hover{
-    color: #43a458;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  height: 70px;
+}
+
+/* Стили для логотипа */
+.logo img {
+  width: 60px; /* Ширина логотипа */
+  height: 60px; /* Автоматическая высота */
+  cursor: pointer;
+}
+
+/* Контейнер для поиска */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 40%; /* Ширина контейнера поиска */
+  position: relative;
+}
+
+/* Поле для ввода текста */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Кнопка поиска */
+.search-button {
+  padding: 10px 20px;
+  background-color: #114577;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #0d345c; /* Цвет при наведении */
+}
+
+.search {
+  width: 16px; /* Размер иконки поиска */
+  height: auto;
+  margin-right: 5px; /* Отступ между иконкой и текстовым полем */
+}
+
+/* Контейнер для иконок */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Отступ между иконками */
+}
+
+/* Стили для каждой иконки */
+.icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 24px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.icon p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.499);
+}
+
+.icon p:hover {
+  color: #114577;
+}

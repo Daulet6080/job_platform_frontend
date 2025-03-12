@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/NavigationBar.css';
 
-export default function NavigationBar({ onSearch }) { // Получаем onSearch как пропс
+export default function NavigationBar({ onSearch }) {
   const [searchText, setSearchText] = useState('');
   const navigate = useNavigate();
 
@@ -11,7 +11,9 @@ export default function NavigationBar({ onSearch }) { // Получаем onSear
   };
 
   const handleSearch = () => {
-    onSearch(searchText); // Вызываем переданную функцию с текстом поиска
+    if (searchText.trim() !== '') {
+      onSearch(searchText);
+    }
   };
 
   const handleLogoClick = useCallback(() => {
@@ -19,40 +21,39 @@ export default function NavigationBar({ onSearch }) { // Получаем onSear
   }, [navigate]);
 
   const handleCartClick = () => {
-    navigate('/cart'); // Переход в корзину
+    navigate('/cart');
   };
 
   return (
-    <nav className="navigation-bar">
-      <div className="logo" onClick={handleLogoClick}>
-        <img src="/logo.jpeg" alt="Логотип" />
-      </div>
-
-      <div className="search-container">
-        <img className="search" src="/search.png" alt="Поиск" />
-        <input
-          type="text"
-          placeholder="Поиск товаров..."
-          className="search-input"
-          value={searchText}
-          onChange={handleInputChange}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          Найти
-        </button>
-      </div>
-
-      <div className="nav-icons">
-        <div className="icon fav-icon">
-          <img src="/isb.png" alt="Избранное" />
-          <p>Избранное</p>
+      <nav className="navigation-bar">
+        <div className="logo" onClick={handleLogoClick}>
+          <img src="/logo.png" alt="Логотип" />
         </div>
-        <div className="icon cart-icon" onClick={handleCartClick}>
-          <img src="/corsina.png" alt="Корзина" />
-          <p>Корзина</p>
+
+        <div className="search-container">
+          <img className="search" src="/search.png" alt="Поиск" />
+          <input
+              type="text"
+              placeholder="Поиск стартапов..."
+              className="search-input"
+              value={searchText}
+              onChange={handleInputChange}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            Найти
+          </button>
         </div>
-      </div>
-    </nav>
+
+        <div className="nav-icons">
+          <div className="icon fav-icon">
+            <img src="/isb.png" alt="Избранное" />
+            <p>Избранное</p>
+          </div>
+          <div className="icon cart-icon" onClick={handleCartClick}>
+            <img src="/corsina.png" alt="Корзина" />
+            <p>Корзина</p>
+          </div>
+        </div>
+      </nav>
   );
 }
-
