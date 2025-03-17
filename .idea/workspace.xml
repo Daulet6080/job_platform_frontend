@@ -4,52 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69d98006-dbcb-45be-a6af-17a8c4274114" name="Changes" comment="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS">
-      <change afterPath="$PROJECT_DIR$/Job platform/src/pages/ChatPage.jsx" afterDir="false" />
+    <list default="true" id="69d98006-dbcb-45be-a6af-17a8c4274114" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/dist/index.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/dist/index.umd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/dist/index.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/dist/index.umd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/es/components/Context.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/es/components/Context.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/es/utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/es/utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/es/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/es/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/lib/components/Context.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/lib/components/Context.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/lib/utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/lib/utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/@ant-design/icons/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/allergy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/antihistamines.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/aspirin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/baby_products.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/banner2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/banner3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/cosmetics.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/diaz.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/fitness.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/hygiene.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/ibuprofen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/loperamide.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/medical_tech.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/medicine.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/multivitamins.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/omega3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/orthopedics.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/paracetamol.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/vitaminB12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/vitaminC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/vitaminD.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/vitamins.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/public/weight_loss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/components/Category.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/components/Category.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/components/NavigationBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/components/NavigationBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/styles/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/styles/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/styles/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/styles/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/styles/LanguageDropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/styles/LanguageDropdown.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,19 +23,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "old-project",
-    "last_opened_file_path": "C:/Users/admin/WebstormProjects/job_platform_frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;old-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/WebstormProjects/job_platform_frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -96,7 +52,8 @@
       <option name="presentableId" value="Default" />
       <updated>1741727265528</updated>
       <workItem from="1741727266860" duration="4549000" />
-      <workItem from="1741740108840" duration="7969000" />
+      <workItem from="1741740108840" duration="8361000" />
+      <workItem from="1742251081909" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS">
       <option name="closed" value="true" />
@@ -106,7 +63,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741744820773</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update">
+      <option name="closed" value="true" />
+      <created>1741748284501</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741748284501</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +79,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
