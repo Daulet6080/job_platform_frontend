@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69d98006-dbcb-45be-a6af-17a8c4274114" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/components/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/components/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/pages/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/styles/LogReg.css" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/styles/LogReg.css" afterDir="false" />
-    </list>
+    <list default="true" id="69d98006-dbcb-45be-a6af-17a8c4274114" name="Changes" comment="style: обнавлен ui auth, reg&#10;feat: добавлен fullfame, checkpassword и  обязательные поля" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +54,7 @@
       <workItem from="1741740108840" duration="8361000" />
       <workItem from="1742251081909" duration="2664000" />
       <workItem from="1742960382705" duration="1699000" />
-      <workItem from="1743357471305" duration="10046000" />
+      <workItem from="1743357471305" duration="10363000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS">
       <option name="closed" value="true" />
@@ -86,7 +72,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741748284501</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="style: обнавлен ui auth, reg&#10;feat: добавлен fullfame, checkpassword и  обязательные поля">
+      <option name="closed" value="true" />
+      <created>1743466122856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743466122856</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +89,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="style: обнавлен ui auth, reg&#10;feat: добавлен fullfame, checkpassword и  обязательные поля" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: обнавлен ui auth, reg&#10;feat: добавлен fullfame, checkpassword и  обязательные поля" />
   </component>
 </project>
