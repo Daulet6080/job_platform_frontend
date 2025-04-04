@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import JobDetailPage from './pages/JobDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
 import ApplyPage from './pages/ApplyPage';
+import { JobsProvider } from './context/JobsContext'; 
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -26,17 +27,20 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home username={username} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
-          <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setUsername={setUsername} />} />
-          <Route path='/signup' element={<Register setLoggedIn={setLoggedIn} setUsername={setUsername} />} />
-          <Route path="/jobs" element={<JobListPage />} /> {/* Маршрут для списка вакансий */}
-          <Route path="/jobs/:id" element={<JobDetailPage />} /> {/* Маршрут для деталей вакансии */}
-          <Route path="/favorites" element={<FavoritesPage />} /> {/* Избранные вакансии */}
-          <Route path="/apply" element={<ApplyPage />} /> {/* Страница отклика на вакансию */}
-        </Routes>
-      </BrowserRouter>
+      {}
+      <JobsProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home username={username} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+            <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setUsername={setUsername} />} />
+            <Route path='/signup' element={<Register setLoggedIn={setLoggedIn} setUsername={setUsername} />} />
+            <Route path="/jobs" element={<JobListPage />} /> 
+            <Route path="/jobs/:id" element={<JobDetailPage />} /> 
+            <Route path="/favorites" element={<FavoritesPage />} /> 
+            <Route path="/apply" element={<ApplyPage />} /> 
+          </Routes>
+        </BrowserRouter>
+      </JobsProvider>
     </div>
   );
 }
