@@ -2,6 +2,7 @@ import React, {useCallback, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import "../styles/LogReg.css";
 import logo from '../assets/logo.png';
+import { loginUser } from '../services/auth.jsx';
 
 export default function Login(props) {
     const [username, setUsername] = useState("");
@@ -11,53 +12,45 @@ export default function Login(props) {
 
     const navigate = useNavigate();
 
-    const logIn = useCallback(() => {
-        fetch("http://localhost:8081/auth/auth_token", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({username, password})
-        })
-            .then(r => r.json())
-            .then(r => {
-                if (r.username === username){
-                    console.log('successfully authenticated.');
-                    localStorage.setItem("user", JSON.stringify({username, token: r.accessToken, expiresAt: r.expiresAt, refreshToken: r.refreshToken}))
-                    props.setLoggedIn(true)
-                    props.setUsername(username)
-                    navigate("/")
-                } else {
-                    console.log("error in authentication " + r.message);
-                }
-            })
-    }, [username, password, navigate, props]);
+    const onButtonClick = useCallback(async () => {
+        setUsernameError("");
+        setPasswordError("");
 
-    const onButtonClick = useCallback(() => {
-
-        // Set initial error values to empty
-        setUsernameError("")
-        setPasswordError("")
-
-        // Check if the user has entered both fields correctly
         if ("" === username) {
-            setUsernameError("Please enter your username")
-            return
+            setUsernameError("Please enter your username");
+            return;
         }
         if ("" === password) {
-            setPasswordError("Please enter a password")
-            return
+            setPasswordError("Please enter a password");
+            return;
         }
         if (password.length < 7) {
-            setPasswordError("The password must be 8 characters or longer")
-            return
+            setPasswordError("The password must be 8 characters or longer");
+            return;
         }
 
-        // Check if username has an account associated with it
-        logIn();
-
-
-    }, [username, password, logIn]);
+        try {
+            const userData = await loginUser(username, password);
+            localStorage.setItem("user", JSON.stringify({
+                username: userData.username,
+                token: userData.accessToken,
+                expiresAt: userData.expiresAt,
+                refreshToken: userData.refreshToken
+            }));
+            props.setLoggedIn(true);
+            props.setUsername(username);
+            navigate("/");
+        } catch (error) {
+            console.error("Ошибка логина:", error);
+            if (error.response && error.response.data && error.response.data.message) {
+                setUsernameError(error.response.data.message);
+                setPasswordError(error.response.data.message);
+            } else {
+                setUsernameError("Invalid username or password");
+                setPasswordError("Invalid username or password");
+            }
+        }
+    }, [username, password, navigate, props]);
 
 
     const onPClick = () => {
@@ -78,6 +71,9 @@ export default function Login(props) {
                 </div>
             </div>
             <div className="rightSide">
+                <div className="forgotPasswordContainer">
+                    <p className="forgotPasswordLink" onClick={onForgotPasswordClick}>Forgot password?</p>
+                </div>
                 <div className={"titleContainer"}>
                     <div>Login</div>
                 </div>

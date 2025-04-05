@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MessageOutlined } from '@ant-design/icons';
 import '../styles/NavigationBar.css';
 
+// eslint-disable-next-line react/prop-types
 export default function NavigationBar({ onSearch }) {
   const [searchText, setSearchText] = useState('');
   const navigate = useNavigate();
@@ -11,11 +12,13 @@ export default function NavigationBar({ onSearch }) {
     setSearchText(e.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearchClick = useCallback(() => {
     if (searchText.trim() !== '') {
       onSearch(searchText);
+    } else {
+      onSearch(''); // Передаем пустую строку для отображения всех
     }
-  };
+  }, [searchText, onSearch]);
 
   const handleLogoClick = useCallback(() => {
     navigate('/');
@@ -39,12 +42,17 @@ export default function NavigationBar({ onSearch }) {
           <img className="search" src="/search.png" alt="Поиск" />
           <input
               type="text"
-              placeholder="Поиск стартапов..."
+              placeholder="Поиск вакансий..."
               className="search-input"
               value={searchText}
               onChange={handleInputChange}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleSearchClick();
+                }
+              }}
           />
-          <button className="search-button" onClick={handleSearch}>
+          <button className="search-button" onClick={handleSearchClick}>
             Найти
           </button>
         </div>

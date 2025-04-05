@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUsernameError, setEmailError, setPasswordError, clearErrors } from '../store';
 import "../styles/LogReg.css";
 import logo from '../assets/logo.png';
+import { registerUser } from "../services/auth.jsx";
 
 export default function Register(props) {
     const [username, setUsername] = useState("");
@@ -18,11 +19,12 @@ export default function Register(props) {
     const usernameError = useSelector((state) => state.auth.usernameError);
     const emailError = useSelector((state) => state.auth.emailError);
     const passwordError = useSelector((state) => state.auth.passwordError);
+    const fullnameError = useSelector((state) => state.auth.usernameError);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const onButtonClick = () => {
+    const onButtonClick = async () => {
         // Сбрасываем ошибки
         dispatch(clearErrors());
         setCheckPasswordError("");
@@ -37,7 +39,7 @@ export default function Register(props) {
         }
 
         if ("" === fullname) {
-            dispatch(setEmailError("Please enter your fullname"));
+            dispatch(fullnameError("Please enter your full name"));
             hasErrors = true;
         }
 
@@ -59,11 +61,6 @@ export default function Register(props) {
             return; // Прерываем выполнение, если пароли не совпадают
         }
 
-        if (hasErrors) {
-            setIsFormInvalid(true);
-            return;
-        }
-
         // Дополнительные проверки (выполняются только если нет ошибок обязательных полей)
         if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             dispatch(setEmailError("Please enter a valid email"));
@@ -75,32 +72,35 @@ export default function Register(props) {
             return;
         }
 
-        signUp();
+        if (hasErrors) {
+            setIsFormInvalid(true);
+            return;
+        }
+
+        try {
+            await registerUser(username, fullname, email, password);
+            navigate("/login");
+        } catch (error) {
+            console.error("Ошибка регистрации:", error);
+            if (error.response && error.response.data && error.response.data.message) {
+                if (error.response.data.message.toLowerCase().includes("username")) {
+                    dispatch(setUsernameError(error.response.data.message));
+                } else if (error.response.data.message.toLowerCase().includes("email")) {
+                    dispatch(setEmailError(error.response.data.message));
+                } else {
+                    // (общее сообщение об ошибке или обработать конкретные коды ошибок)
+                    console.log(error.response.data.message);
+                }
+            } else {
+                // (Ошибка сети или другая непредвиденная ошибка)
+                // (общее сообщение об ошибке)
+                console.log(error);
+            }
+        }
     };
 
     const onPClick = () => {
         navigate("/login");
-    };
-
-    const signUp = () => {
-        const bio = '';
-        const role = 'USER';
-        fetch("http://localhost:8081/user", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username, fullname, email, password, bio, role })
-        })
-            .then(r => {
-                if (r.status === 201) {
-                    console.log('user created.');
-                    navigate("/login");
-                }
-                else {
-                    console.log('failed to create user');
-                }
-            })
     };
 
     const inputClassName = isFormInvalid ? "inputBox invalid" : "inputBox";
