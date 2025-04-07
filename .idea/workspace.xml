@@ -4,88 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69d98006-dbcb-45be-a6af-17a8c4274114" name="Changes" comment="update logo">
-      <change afterPath="$PROJECT_DIR$/Job platform/src/services/auth.jsx" afterDir="false" />
+    <list default="true" id="69d98006-dbcb-45be-a6af-17a8c4274114" name="Changes" comment="feat: search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/.vite/deps/react_jsx-runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/.github/FUNDING.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/.nycrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-define-property/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/.github/FUNDING.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/RequireObjectCoercible.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/RequireObjectCoercible.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/RequireObjectCoercible.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/RequireObjectCoercible.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/ToObject.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/ToObject.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/ToObject.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/ToObject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-object-atoms/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/es-set-tostringtag/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/.github/FUNDING.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/.nycrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/test/GetIntrinsic.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/get-intrinsic/test/GetIntrinsic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/.github/FUNDING.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/gopd/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/gopd/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/.github/FUNDING.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/.nycrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/shams.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/shams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/shams/core-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/shams/core-js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/shams/get-own-property-symbols.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/shams/get-own-property-symbols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/node_modules/has-symbols/test/tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/components/JobItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/components/JobItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/components/NavigationBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/components/NavigationBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Job platform/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Job platform/src/pages/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +57,7 @@
       <workItem from="1742251081909" duration="2664000" />
       <workItem from="1742960382705" duration="1699000" />
       <workItem from="1743357471305" duration="10363000" />
-      <workItem from="1743848899103" duration="807000" />
+      <workItem from="1743848899103" duration="1255000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS">
       <option name="closed" value="true" />
@@ -163,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743466122856</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: search">
+      <option name="closed" value="true" />
+      <created>1743850707671</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743850707671</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +101,7 @@
     <MESSAGE value="refactor: оптимизирован алгоритм поиска&#10;style: исправлен CSS" />
     <MESSAGE value="Update" />
     <MESSAGE value="style: обнавлен ui auth, reg&#10;feat: добавлен fullfame, checkpassword и  обязательные поля" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: обнавлен ui auth, reg&#10;feat: добавлен fullfame, checkpassword и  обязательные поля" />
+    <MESSAGE value="feat: search" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: search" />
   </component>
 </project>
