@@ -1,35 +1,103 @@
-/* Стили для изображения с классом 'location' */
-.call, .user {
-    width: 18px;  /* Задаем ширину */
-    height: auto;  /* Высота подстраивается автоматически */
-    margin-right: 2px;  /* Отступ справа */
-  }
-.contact, .voiti {
-    display: flex;
-    align-items: center;
-}
-header {
-    display: flex;
-    justify-content: space-between; /* Разделяем элементы: одни слева, другие справа */
-    align-items: center; /* Центрируем элементы по вертикали */
-  }
+@import './variables.css';
 
-.headcontent{
-    display: flex;
-    align-items: center;
+.header {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  height: var(--header-height);
+  width: 100%;
+  position: relative;
+  z-index: var(--z-sticky);
 }
-p{
-    font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff;
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
-.hel{
-    margin-right: 45px;
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
 }
-.contact p:hover, .voiti p:hover{
-    color: #58c3bd;
+
+.header-item {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
 }
-a{
-    text-decoration: none;
+
+.header-icon {
+  margin-right: var(--space-1);
+  width: 16px;
+  height: 16px;
+  opacity: 0.85;
+  vertical-align: text-top;
 }
-.voiti{
-    margin-right: 25px;
+
+.header-contact,
+.header-login {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-gray-200);
+  transition: all var(--transition-quick);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.header-contact:hover,
+.header-login:hover {
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.05);
+  opacity: 1;
+}
+
+.header-time {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-400);
+  letter-spacing: 0.02em;
+}
+
+.header-separator {
+  width: 1px;
+  height: 16px;
+  margin: 0 var(--space-2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header-time {
+    display: none;
+  }
+  
+  .header-left,
+  .header-right {
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: auto;
+    padding: var(--space-2) 0;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .header-left, 
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .header-separator {
+    display: none;
+  }
 }

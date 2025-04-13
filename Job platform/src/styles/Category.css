@@ -1,69 +1,194 @@
-/* Секция категорий */
+@import './variables.css';
+
 .categories-section {
+  padding: var(--space-10) 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.categories-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.03));
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-6);
   text-align: center;
-  margin-bottom: 30px; /* Отступ снизу перед сеткой */
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: -0.02em;
 }
 
-/* Заголовок категорий */
-.categories-title {
-  font-size: 28px;
-  font-weight: bold;
-  background-color: #43a458; /* Зеленый фон */
-  color: #ffffff; /* Белый текст */
-  padding: 15px; /* Внутренний отступ */
-  border-radius: 10px; /* Скругленные углы */
-  margin-bottom: 20px; /* Отступ между заголовком и сеткой */
-  display: inline-block; /* Ограничиваем ширину только текстом */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
-}
-.categories-title:hover{
-  transform: scale(1.05);
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-gray-900);
+  width: 60px;
+  margin: 0 auto;
 }
 
-
-/* Сетка для карточек категорий */
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px; /* Расстояние между карточками */
-  padding: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-8);
 }
 
-/* Стилизация карточки */
 .category-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 200px;
-  text-align: center;
+  background-color: var(--color-pure-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  cursor: pointer; /* Изменение курсора при наведении */
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  border: 1px solid var(--color-gray-100);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* При наведении карточка увеличивается */
 .category-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gray-200);
 }
 
-/* Изображение категории */
+.category-image-wrapper {
+  overflow: hidden;
+  height: 180px;
+  position: relative;
+}
+
 .category-image {
   width: 100%;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
-  border-bottom: 1px solid #f0f0f0;
+  transition: transform var(--transition-smooth);
 }
 
-/* Название категории */
+.category-card:hover .category-image {
+  transform: scale(1.08);
+}
+
+.category-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.01), rgba(0,0,0,0.15));
+  opacity: 0;
+  transition: opacity var(--transition-quick);
+}
+
+.category-card:hover .category-image-overlay {
+  opacity: 1;
+}
+
 .category-name {
-  font-size: 18px;
-  padding: 15px 10px;
-  color: rgba(0, 0, 0, 0.737);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  padding: var(--space-4);
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.category-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-gray-900);
+  transition: transform var(--transition-quick);
+}
+
+.category-card:hover .category-name::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.category-job-count {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+  text-align: center;
+  padding-bottom: var(--space-3);
+  font-weight: var(--font-weight-medium);
 }
 
 .category-card.selected {
-  border: 2px solid #43a458; /* Зелёная рамка для выбранной категории */
-  background-color: #e0f7e0; /* Легкий зеленоватый фон для выбранной категории */
+  border: 2px solid var(--color-gray-800);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .categories-section {
+    padding: var(--space-8) 0;
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-5);
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+  }
+  
+  .category-image-wrapper {
+    height: 150px;
+  }
+  
+  .category-name {
+    font-size: var(--font-size-base);
+    padding: var(--space-3);
+  }
+}
+
+@media (max-width: 576px) {
+  .categories-section {
+    padding: var(--space-6) 0;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+  
+  .category-image-wrapper {
+    height: 120px;
+  }
+  
+  .category-name {
+    padding: var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+  
+  .category-job-count {
+    font-size: var(--font-size-xs);
+  }
 }

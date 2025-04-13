@@ -1,0 +1,153 @@
+@import './variables.css';
+
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.pagination {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-1);
+}
+
+.pagination-item {
+  margin: 0 2px;
+}
+
+.pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-quick);
+}
+
+.pagination-link:hover {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-400);
+  color: var(--color-gray-900);
+}
+
+.pagination-item.active .pagination-link {
+  background-color: var(--color-gray-900);
+  border-color: var(--color-gray-900);
+  color: var(--color-white);
+  cursor: default;
+}
+
+.pagination-item.prev .pagination-link,
+.pagination-item.next .pagination-link {
+  padding: 0;
+}
+
+.pagination-item.disabled .pagination-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
+}
+
+.pagination-info {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+}
+
+/* Адаптивная верстка */
+@media (max-width: 576px) {
+  .pagination {
+    gap: 1px;
+  }
+  
+  .pagination-link {
+    min-width: 32px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .pagination-item:not(.prev):not(.next):not(.active):not(.dots) {
+    display: none;
+  }
+  
+  .pagination-item.dots:nth-of-type(2),
+  .pagination-item.dots:nth-last-of-type(2) {
+    display: block;
+  }
+  
+  .pagination-dots {
+    min-width: 20px;
+    padding: 0;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .pagination-link {
+    min-width: 34px;
+    height: 34px;
+  }
+  
+  /* Скрываем некоторые номера страниц на планшетах для экономии места */
+  .pagination-item:not(.prev):not(.next):not(.active):not(.dots) {
+    display: none;
+  }
+  
+  .pagination-item.active,
+  .pagination-item:nth-of-type(2),
+  .pagination-item:nth-last-of-type(2) {
+    display: block;
+  }
+}
+
+/* Анимация для улучшения UX */
+.pagination-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination-link:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.pagination-link:active:after {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  transition: width 0s, height 0s, opacity 0.3s ease-out;
+}
