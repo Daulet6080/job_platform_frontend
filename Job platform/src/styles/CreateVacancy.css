@@ -1,0 +1,95 @@
+.create-vacancy-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.create-vacancy-container h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+.create-vacancy-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #7a5fc0;
+    outline: none;
+}
+
+.salary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.create-button,
+.cancel-button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-button {
+    background-color: #7a5fc0;
+    color: white;
+}
+
+.create-button:hover {
+    background-color: #694ab3;
+}
+
+.cancel-button {
+    background-color: #f0f0f0;
+    color: #555;
+    margin-top: -10px;
+}
+
+.cancel-button:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+    .salary {
+        grid-template-columns: 1fr;
+    }
+
+    .create-vacancy-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}

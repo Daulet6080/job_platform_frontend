@@ -36,8 +36,10 @@
 .company-logo {
     width: 60px;
     height: 60px;
+    object-fit: cover;
     border-radius: 50%;
-    margin-right: 20px;
+    background-color: #444;
+    margin-right: 16px;
 }
 
 .company-info h1 {

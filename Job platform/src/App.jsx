@@ -12,6 +12,7 @@ import ApplyPage from './pages/ApplyPage';
 import {JobsProvider} from './context/JobsContext';
 import JobSeekerProfilePage from './pages/profile/JobSeekerProfilePage.jsx';
 import EmployerProfilePage from './pages/profile/EmployerProfilePage';
+import CreateVacancy from "./pages/vacancies/CreateVacancy.jsx";
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -63,6 +64,11 @@ function App() {
                             path="/employer/dashboard"
                             element={<EmployerDashboard />} // пока тексерип жатырм если че озгерте койындар
                             // element={loggedIn && userRole === 'employer' ? <EmployerDashboard /> : <Navigate to="/login" replace />}
+                        />
+                        <Route
+                            path="/vacancies/create"
+                            element={<CreateVacancy />}
+                            // element={loggedIn && userRole === 'employer' ? <CreateVacancy /> : <Navigate to="/login" replace />}
                         />
                         <Route
                             path="/jobseeker/dashboard"

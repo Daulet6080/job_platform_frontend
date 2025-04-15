@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../../styles/Dashboard.css';
 import Footer from "../../components/Footer.jsx";
 
@@ -10,9 +10,10 @@ function EmployerDashboard() {
 
     return (
         <div className="employer-dashboard">
+
             <header className="dashboard-header">
                 <div className="header-left">
-                    <img src="/company-logo.png" alt="Логотип компании" className="company-logo" />
+                    <img src="/company-logo.png" alt="Логотип компании" className="company-logo"/>
                     <div>
                         <h1>{companyName}</h1>
                         <p>Описание компании будет здесь...</p>
@@ -25,19 +26,19 @@ function EmployerDashboard() {
                 </div>
             </header>
 
+
             <main className="dashboard-content">
                 <section className="vacancies-section">
                     <div className="section-header">
                         <h2>Вакансии компании</h2>
-                        <Link to="/vacancies/create" className="add-vacancy-button">+ Добавить вакансию</Link>
-                    </div>
+                        <Link to="/vacancies/create" className="add-vacancy-link">+ Добавить вакансию</Link></div>
                     <ul className="vacancies-list">
                         {/* Здесь будут карточки вакансий */}
                         <li className="vacancy-card">Пример вакансии</li>
                     </ul>
                 </section>
 
-                <hr className="section-divider" />
+                <hr className="section-divider"/>
 
                 <section className="reviews-section">
                     <h2>Отзывы о компании</h2>
