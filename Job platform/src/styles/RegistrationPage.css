@@ -1,0 +1,138 @@
+/* pages/RegistrationPage.css */
+
+.registration-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центрируем по вертикали тоже */
+    min-height: 100vh; /* Занимаем всю высоту экрана */
+    padding: var(--space-6) var(--space-4);
+    background-color: var(--color-gray-50);
+}
+
+.role-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-pure-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    max-width: 500px; /* Ограничиваем ширину контейнера выбора роли */
+    width: 100%;
+}
+
+.role-selection-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-6);
+}
+
+.role-buttons {
+    display: flex;
+    flex-direction: column; /* Размещаем кнопки вертикально */
+    gap: var(--space-4);
+    width: 100%; /* Кнопки на всю ширину контейнера */
+    margin-bottom: var(--space-6);
+}
+
+.role-button {
+    width: 100%; /* Занимают всю ширину role-buttons */
+    padding: var(--space-4);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--transition-quick), transform var(--transition-quick), box-shadow var(--transition-quick);
+    box-sizing: border-box;
+}
+
+.role-button:hover {
+    background-color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.role-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.registration-form-container {
+    background-color: var(--color-pure-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 600px; /* Ограничиваем ширину контейнера формы */
+    width: 100%;
+    margin-top: var(--space-6); /* Отступ от блока выбора роли */
+}
+
+.registration-form-container h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-4);
+    text-align: center;
+}
+
+/* Дополнительные стили для экранов поменьше */
+@media (max-width: 768px) {
+    .role-selection-container,
+    .registration-form-container {
+        padding: var(--space-6);
+        margin-top: var(--space-4);
+    }
+
+    .role-buttons {
+        gap: var(--space-3);
+    }
+
+    .role-button {
+        font-size: var(--font-size-base);
+        padding: var(--space-3);
+    }
+
+    .role-selection-title {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-4);
+    }
+
+    .registration-form-container h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--space-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .role-selection-container,
+    .registration-form-container {
+        padding: var(--space-4);
+    }
+
+    .role-buttons {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .role-button {
+        font-size: var(--font-size-base);
+        padding: var(--space-3);
+    }
+}
+
+.role-selection-container {
+    /* ... предыдущие стили ... */
+    width: 100%; /* Занимает всю доступную ширину в auth-right */
+    max-width: 400px; /* Ограничиваем максимальную ширину */
+}
+
+.auth-form {
+    width: 100%; /* Занимает всю доступную ширину в auth-right */
+    max-width: 400px; /* Ограничиваем максимальную ширину, как и блок выбора роли */
+}

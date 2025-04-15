@@ -1,0 +1,173 @@
+.employer-dashboard {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1e1e1e;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header-left h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: white; /* Название компании */
+    margin: 0;
+}
+
+.header-left p {
+    font-size: 16px;
+    color: #ccc; /* Описание светло-серым */
+    margin: 4px 0 0 0;
+}
+
+.header-left {
+    display: flex;
+
+    align-items: center;
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.company-info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.company-info p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.header-right .header-btn {
+    margin-left: 16px;
+    padding: 8px 16px;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.header-right .header-btn:hover {
+    background-color: #666;
+}
+
+.dashboard-content {
+    padding: 30px 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-vacancy-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-vacancy-button:hover {
+    background-color: #0056b3;
+}
+
+.vacancies-list, .reviews-list {
+    list-style: none;
+    padding: 0;
+}
+
+.vacancy-card, .review-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+.review-card {
+    background-color: #fff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.stars {
+    color: #f5c518; /* Золотистый цвет звёзд */
+    font-size: 16px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .header-left {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .header-right {
+        align-self: stretch;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .vacancy-card,
+    .review-card {
+        font-size: 14px;
+        padding: 14px;
+    }
+}
