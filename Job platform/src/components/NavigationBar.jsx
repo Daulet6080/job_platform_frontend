@@ -1,11 +1,19 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useCallback, useEffect, useContext } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import '../styles/NavigationBar.css';
+import { AuthContext } from '../context/AuthContext';
 
 export default function NavigationBar({ onSearch }) {
   const [searchText, setSearchText] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { currentUser } = useContext(AuthContext);
+
+  // Определяем, активна ли текущая ссылка
+  const isActive = useCallback((path) => {
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +67,7 @@ export default function NavigationBar({ onSearch }) {
             value={searchText}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
+            aria-label="Поиск вакансий"
           />
           <button className="search-button" onClick={handleSearch}>
             Найти
@@ -66,24 +75,32 @@ export default function NavigationBar({ onSearch }) {
         </div>
 
         <div className="nav-actions">
-          <Link to="/favorites" className="nav-action">
+          <Link to="/jobs" className={`nav-action ${isActive('/jobs') ? 'active' : ''}`}>
+            <svg className="nav-icon" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+            </svg>
+            <span>Вакансии</span>
+          </Link>
+          <Link to="/companies" className={`nav-action ${isActive('/companies') ? 'active' : ''}`}>
+            <svg className="nav-icon" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
+            </svg>
+            <span>Компании</span>
+          </Link>
+          <Link to="/favorites" className={`nav-action ${isActive('/favorites') ? 'active' : ''}`}>
             <svg className="nav-icon" viewBox="0 0 24 24" width="24" height="24">
               <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
             <span>Избранное</span>
           </Link>
-          <Link to="/account" className="nav-action">
-            <svg className="nav-icon" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
-            <span>Профиль</span>
-          </Link>
-          <Link to="/chat" className="nav-action">
-            <svg className="nav-icon" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-            </svg>
-            <span>Сообщения</span>
-          </Link>
+          {currentUser && (
+            <Link to="/chat" className={`nav-action ${isActive('/chat') ? 'active' : ''}`}>
+              <svg className="nav-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+              </svg>
+              <span>Сообщения</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

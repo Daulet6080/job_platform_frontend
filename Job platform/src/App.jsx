@@ -4,7 +4,7 @@ import JobSeekerDashboard from './pages/dashboard/JobSeekerDashboard.jsx';
 import EmployerDashboard from './pages/dashboard/EmployerDashboard';
 import JobListPage from './pages/JobListPage';
 import './App.css';
-import {useEffect, useState} from 'react';
+import {useContext, useEffect} from 'react';
 import RegistrationPage from './pages/RegistrationPage';
 import JobDetailPage from './pages/JobDetailPage';
 import FavoritesPage from './pages/FavoritesPage';
@@ -13,71 +13,94 @@ import {JobsProvider} from './context/JobsContext';
 import JobSeekerProfilePage from './pages/profile/JobSeekerProfilePage.jsx';
 import EmployerProfilePage from './pages/profile/EmployerProfilePage';
 import CreateVacancy from "./pages/vacancies/CreateVacancy.jsx";
+import { AuthProvider, AuthContext } from './context/AuthContext';
 
-function App() {
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [username, setUsername] = useState("");
-    const [userRole, setUserRole] = useState(null);
+const ProtectedRoute = ({ children, requiredRole }) => {
+    const { currentUser, loading } = useContext(AuthContext);
+    
+    if (loading) {
+        return <div>Загрузка...</div>;
+    }
+    
+    if (!currentUser) {
+        return <Navigate to="/login" replace />;
+    }
+    
+    if (requiredRole && currentUser.role !== requiredRole) {
+        return <Navigate to="/" replace />;
+    }
+    
+    return children;
+};
 
-    useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("user"));
-        setLoggedIn(!!(user && user.token));
-        setUsername(user?.username || "");
-        setUserRole(user?.role || null);
-    }, []);
+function AppContent() {
+    const { currentUser } = useContext(AuthContext);
 
     return (
         <div className="App">
-            {}
             <JobsProvider>
                 <BrowserRouter>
                     <Routes>
-                        <Route
-                            path="/"
-                            element={<JobSeekerDashboard username={username} loggedIn={loggedIn}
-                                                         setLoggedIn={setLoggedIn}/>}
-                        />
-                        <Route path="/" element={<JobSeekerDashboard username={username} loggedIn={loggedIn}
-                                                                     setLoggedIn={setLoggedIn}/>}/>
-                        <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setUsername={setUsername}
-                                                             setUserRole={setUserRole}/>}/>
-                        <Route path='/signup'
-                               element={<RegistrationPage setLoggedIn={setLoggedIn} setUsername={setUsername}
-                                                          setUserRole={setUserRole}/>}/>
-                        <Route path="/jobs" element={<JobListPage/>}/>
-                        <Route path="/jobs/:id" element={<JobDetailPage/>}/>
-                        <Route path="/favorites" element={<FavoritesPage/>}/>
-                        <Route path="/apply" element={<ApplyPage/>}/>
-
-                        {/* Защищенные маршруты для авторизованных пользователей */}
+                        <Route path="/" element={<JobSeekerDashboard />} />
+                        <Route path="/login" element={!currentUser ? <Login /> : <Navigate to="/" />} />
+                        <Route path='/signup' element={!currentUser ? <RegistrationPage /> : <Navigate to="/" />} />
+                        <Route path="/jobs" element={<JobListPage />} />
+                        <Route path="/jobs/:id" element={<JobDetailPage />} />
+                        <Route path="/favorites" element={<FavoritesPage />} />
+                        <Route path="/apply" element={<ApplyPage />} />
+                        
                         <Route
                             path="/profile/jobseeker"
-                            element={loggedIn && userRole === 'jobseeker' ? <JobSeekerProfilePage/> :
-                                <Navigate to="/login" replace/>}
+                            element={
+                                <ProtectedRoute requiredRole="jobseeker">
+                                    <JobSeekerProfilePage />
+                                </ProtectedRoute>
+                            }
                         />
                         <Route
                             path="/profile/employer"
-                            element={<EmployerProfilePage/>}
-                            // element={loggedIn && userRole === 'employer' ? <EmployerProfilePage /> : <Navigate to="/login" replace />}
+                            element={
+                                <ProtectedRoute requiredRole="employer">
+                                    <EmployerProfilePage />
+                                </ProtectedRoute>
+                            }
                         />
                         <Route
                             path="/employer/dashboard"
-                            element={<EmployerDashboard />} // пока тексерип жатырм если че озгерте койындар
-                            // element={loggedIn && userRole === 'employer' ? <EmployerDashboard /> : <Navigate to="/login" replace />}
+                            element={
+                                <ProtectedRoute requiredRole="employer">
+                                    <EmployerDashboard />
+                                </ProtectedRoute>
+                            }
                         />
                         <Route
                             path="/vacancies/create"
-                            element={<CreateVacancy />}
-                            // element={loggedIn && userRole === 'employer' ? <CreateVacancy /> : <Navigate to="/login" replace />}
+                            element={
+                                <ProtectedRoute requiredRole="employer">
+                                    <CreateVacancy />
+                                </ProtectedRoute>
+                            }
                         />
                         <Route
                             path="/jobseeker/dashboard"
-                            element={loggedIn && userRole === 'jobseeker' ? <JobSeekerDashboard username={username} loggedIn={loggedIn} setLoggedIn={setLoggedIn} /> : <Navigate to="/login" replace />}
+                            element={
+                                <ProtectedRoute requiredRole="jobseeker">
+                                    <JobSeekerDashboard />
+                                </ProtectedRoute>
+                            }
                         />
                     </Routes>
                 </BrowserRouter>
             </JobsProvider>
         </div>
+    );
+}
+
+function App() {
+    return (
+        <AuthProvider>
+            <AppContent />
+        </AuthProvider>
     );
 }
 

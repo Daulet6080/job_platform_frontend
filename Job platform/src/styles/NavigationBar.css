@@ -6,10 +6,10 @@
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: var(--z-sticky);
+  z-index: var(--z-navbar);
   border-bottom: 1px solid var(--color-gray-100);
   box-shadow: var(--shadow-subtle);
-  transition: box-shadow var(--transition-quick);
+  transition: box-shadow var(--transition-quick), transform 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -31,6 +31,7 @@
   margin-right: var(--space-5);
   cursor: pointer;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo-mark {
@@ -126,6 +127,8 @@
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-sm);
   transition: all var(--transition-quick);
+  border: none;
+  cursor: pointer;
 }
 
 .search-button:hover {
@@ -137,6 +140,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-5);
+  flex-shrink: 0;
 }
 
 .nav-action {
@@ -147,6 +151,8 @@
   cursor: pointer;
   color: var(--color-gray-700);
   transition: color var(--transition-quick);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
 }
 
 .nav-action:hover {
@@ -169,6 +175,22 @@
 
 .nav-action:hover::before {
   background-color: var(--color-gray-100);
+}
+
+.nav-action.active {
+  color: var(--color-primary-600);
+}
+
+.nav-action.active::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 24px;
+  background-color: var(--color-primary-600);
+  border-radius: 2px;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-icon {

@@ -6,7 +6,7 @@
   height: var(--header-height);
   width: 100%;
   position: relative;
-  z-index: var(--z-sticky);
+  z-index: var(--z-header);
 }
 
 .header-container {
@@ -69,6 +69,96 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Стили для выпадающего меню пользователя */
+.header-user-menu {
+  position: relative;
+}
+
+.header-username {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-quick);
+  color: var(--color-gray-200);
+}
+
+.header-username:hover, .header-username.active {
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-arrow {
+  margin-left: var(--space-1);
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.header-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: white;
+  min-width: 220px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: var(--color-gray-900);
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-gray-100);
+}
+
+.dropdown-item svg {
+  margin-right: 10px;
+  color: var(--color-gray-600);
+}
+
+.logout-btn {
+  color: var(--color-red-600);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.logout-btn:hover {
+  background-color: #fff5f5;
+}
+
+.logout-btn svg {
+  color: var(--color-red-600);
+}
+
 @media (max-width: 768px) {
   .header-time {
     display: none;
@@ -99,5 +189,11 @@
   
   .header-separator {
     display: none;
+  }
+  
+  .header-dropdown {
+    right: 0;
+    width: 100%;
+    max-width: 100%; 
   }
 }
