@@ -16,6 +16,7 @@ import CreateVacancy from "./pages/vacancies/CreateVacancy.jsx";
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import CompaniesListPage from './pages/CompaniesListPage';
 import CompanyDetailPage from './pages/CompanyDetailPage';
+import ChatPage from './pages/ChatPage';
 
 const ProtectedRoute = ({ children, requiredRole }) => {
     const { currentUser, loading } = useContext(AuthContext);
@@ -93,7 +94,16 @@ function AppContent() {
                         />
                         <Route path="/companies" element={<CompaniesListPage />} />
                         <Route path="/companies/:id" element={<CompanyDetailPage />} />
-            
+                        <Route path="/chat" element={
+                        <ProtectedRoute>
+                            <ChatPage />
+                        </ProtectedRoute>
+                        } />
+                        <Route path="/chat/:conversationId" element={
+                            <ProtectedRoute>
+                                <ChatPage />
+                            </ProtectedRoute>
+                        } />
 
                     </Routes>
                 </BrowserRouter>

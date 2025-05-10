@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { ru } from 'date-fns/locale';
-import '../../styles/ConversationList.css';
+import '../styles/ConversationList.css';
 
 const ConversationList = ({ 
   conversations, 
