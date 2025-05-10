@@ -14,6 +14,8 @@ import JobSeekerProfilePage from './pages/profile/JobSeekerProfilePage.jsx';
 import EmployerProfilePage from './pages/profile/EmployerProfilePage';
 import CreateVacancy from "./pages/vacancies/CreateVacancy.jsx";
 import { AuthProvider, AuthContext } from './context/AuthContext';
+import CompaniesListPage from './pages/CompaniesListPage';
+import CompanyDetailPage from './pages/CompanyDetailPage';
 
 const ProtectedRoute = ({ children, requiredRole }) => {
     const { currentUser, loading } = useContext(AuthContext);
@@ -89,6 +91,10 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
+                        <Route path="/companies" element={<CompaniesListPage />} />
+                        <Route path="/companies/:id" element={<CompanyDetailPage />} />
+            
+
                     </Routes>
                 </BrowserRouter>
             </JobsProvider>
