@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
-import CityDropdown from './CityDropdown';
 import LanguageDropdown from './LanguageDropdown';
 import { AuthContext } from '../context/AuthContext';
 
@@ -23,12 +22,10 @@ export default function Header() {
     };
 
     updateTime();
-    const timerId = setInterval(updateTime, 60000); // Обновляем каждую минуту
-
+    const timerId = setInterval(updateTime, 60000); 
     return () => clearInterval(timerId);
   }, []);
 
-  // Обработчик для закрытия выпадающего меню при клике вне его
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -42,7 +39,6 @@ export default function Header() {
     };
   }, []);
 
-  // Функция для обработки выхода из системы
   const handleLogout = async () => {
     try {
       await logoutUser();
@@ -53,21 +49,18 @@ export default function Header() {
     }
   };
 
-  // Исправленная функция для перехода в профиль
   const handleProfileClick = () => {
     setIsDropdownOpen(false);
-    // Определяем правильный путь в зависимости от роли пользователя
     if (currentUser && currentUser.role) {
       const profilePath = currentUser.role === 'employer' ? '/profile/employer' : '/profile/jobseeker';
       console.log('Переход на страницу профиля:', profilePath);
       navigate(profilePath);
     } else {
       console.error('Не удалось определить роль пользователя');
-      navigate('/'); // Перенаправляем на главную, если роль не определена
+      navigate('/'); 
     }
   };
 
-  // Функция для перехода в панель управления
   const handleDashboardClick = () => {
     setIsDropdownOpen(false);
     if (currentUser && currentUser.role) {
@@ -79,7 +72,6 @@ export default function Header() {
     }
   };
 
-  // Переключение состояния выпадающего меню
   const toggleDropdown = () => {
     setIsDropdownOpen(prevState => !prevState);
   };
@@ -88,9 +80,6 @@ export default function Header() {
     <header className="header">
       <div className="container header-container">
         <div className="header-left">
-          <div className="header-item">
-            <CityDropdown />
-          </div>
           <div className="header-separator" />
           <div className="header-item">
             <LanguageDropdown />

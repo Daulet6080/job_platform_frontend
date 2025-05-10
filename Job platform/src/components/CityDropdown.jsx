@@ -1,18 +1,34 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useJobs } from '../context/JobsContext';
 import '../styles/CityDropdown.css';
 
-export default function CityDropdown() {
-  const cities = ['Алматы', 'Нур-Султан', 'Шымкент']; 
-  const { updateSelectedCity } = useJobs();
+// Список популярных городов Казахстана
+const popularCities = [
+  'Алматы', 'Астана', 'Шымкент', 'Караганда', 
+  'Актобе', 'Тараз', 'Павлодар', 'Усть-Каменогорск',
+  'Семей', 'Атырау', 'Костанай', 'Кызылорда'
+];
+
+const CityDropdown = () => {
+  const { selectedCity, updateSelectedCity } = useJobs();
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredCities, setFilteredCities] = useState(popularCities);
   const dropdownRef = useRef(null);
 
-  const [selectedCity, setSelectedCity] = useState(
-    localStorage.getItem('city') || 'Алматы'
-  );
+  // Фильтрация городов при вводе поиска
+  useEffect(() => {
+    if (searchTerm) {
+      const filtered = popularCities.filter(city => 
+        city.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredCities(filtered);
+    } else {
+      setFilteredCities(popularCities);
+    }
+  }, [searchTerm]);
 
-  const [isOpen, setIsOpen] = useState(false);
-
+  // Закрытие dropdown при клике вне компонента
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -20,54 +36,74 @@ export default function CityDropdown() {
       }
     };
 
-    const handleEscKey = (event) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-      }
-    };
-
     document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscKey);
-    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscKey);
     };
   }, []);
 
-  const handleCitySelect = (city) => {
-    setSelectedCity(city);
-    localStorage.setItem('city', city);  
-    setIsOpen(false);
+  // Выбор города
+  const handleSelectCity = (city) => {
     updateSelectedCity(city);
+    setIsOpen(false);
+    setSearchTerm('');
+  };
+
+  // Очистка выбранного города
+  const handleClearCity = (e) => {
+    e.stopPropagation();
+    updateSelectedCity('');
   };
 
   return (
-    <div className="dropdown" ref={dropdownRef}>
-      <button 
-        className="dropdown-button" 
+    <div className="city-dropdown" ref={dropdownRef}>
+      <div 
+        className="selected-city" 
         onClick={() => setIsOpen(!isOpen)}
-        aria-haspopup="true"
-        aria-expanded={isOpen}
       >
-        {selectedCity}
-        <span className={`icon ${isOpen ? 'open' : ''}`}>&#9660;</span>
-      </button>
-      
-      <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
-        {cities.map((city, index) => (
-          <div 
-            key={index} 
-            className={`dropdown-item ${city === selectedCity ? 'selected' : ''}`}
-            onClick={() => handleCitySelect(city)}
-            role="option"
-            aria-selected={city === selectedCity}
-            tabIndex={0}
+        <span className="city-icon">📍</span>
+        {selectedCity || 'Выберите город'}
+        {selectedCity && (
+          <button 
+            className="clear-city"
+            onClick={handleClearCity}
           >
-            {city}
-          </div>
-        ))}
+            ×
+          </button>
+        )}
       </div>
+      
+      {isOpen && (
+        <div className="city-dropdown-menu">
+          <div className="city-search">
+            <input 
+              type="text"
+              placeholder="Поиск города..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              autoFocus
+            />
+          </div>
+          
+          <div className="city-list">
+            {filteredCities.length > 0 ? (
+              filteredCities.map((city, index) => (
+                <div 
+                  key={index}
+                  className={`city-item ${selectedCity === city ? 'selected' : ''}`}
+                  onClick={() => handleSelectCity(city)}
+                >
+                  {city}
+                </div>
+              ))
+            ) : (
+              <div className="no-cities">Город не найден</div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default CityDropdown;
