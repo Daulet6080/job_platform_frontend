@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useJobs } from '../context/JobsContext';
 import Header from '../components/Header';
 import NavigationBar from '../components/NavigationBar';
@@ -19,20 +19,35 @@ function JobListPage() {
     filters,
     updateFilters,
     clearFilters,
-    fetchJobs
+    fetchJobs,
+    categoryDetails
   } = useJobs();
 
   const [showFilters, setShowFilters] = useState(false);
   const [activeFilters, setActiveFilters] = useState({});
+  const [debugMode, setDebugMode] = useState(process.env.NODE_ENV !== 'production');
+  
+  // Отслеживаем был ли уже выполнен запрос с параметрами
+  const initialLoadRef = useRef(false);
 
+  // Синхронизация локальных фильтров с контекстом
   useEffect(() => {
-    console.log('JobListPage рендер:', {
-      jobsCount: jobs?.length || 0,
-      loading,
-      error,
-      filters
-    });
-  }, [jobs, loading, error, filters]);
+    setActiveFilters({...filters});
+  }, [filters]);
+
+  // Проверяем параметр category в URL при монтировании
+  useEffect(() => {
+    if (initialLoadRef.current) return;
+    initialLoadRef.current = true;
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    
+    if (categoryParam && categoryParam !== filters.category) {
+      console.log('Применяем фильтр категории из URL:', categoryParam);
+      updateFilters({ category: categoryParam });
+    }
+  }, [filters.category, updateFilters]);
 
   const handleFilterChange = (name, value) => {
     setActiveFilters(prev => ({
@@ -42,28 +57,39 @@ function JobListPage() {
   };
 
   const applyFilters = () => {
+    // Применяем фильтры и очищаем кеш для получения актуальных данных
     console.log('Применяем фильтры:', activeFilters);
     updateFilters(activeFilters);
+    
     if (window.innerWidth < 768) {
       setShowFilters(false);
     }
   };
 
   const resetFilters = () => {
-    console.log('Сбрасываем фильтры');
     setActiveFilters({});
     clearFilters();
   };
 
   const handlePageChange = (newPage) => {
-    console.log('Переход на страницу:', newPage);
+    if (newPage === currentPage) return;
+    
     setCurrentPage(newPage);
     window.scrollTo(0, 0);
   };
 
   const handleRefresh = () => {
-    console.log('Обновляем данные');
+    // Очищаем кеш и выполняем запрос заново
+    jobsService.clearCache?.();
     fetchJobs(currentPage);
+  };
+
+  const handleRemoveCategoryFilter = () => {
+    const newFilters = { ...activeFilters };
+    delete newFilters.category;
+    
+    setActiveFilters(newFilters);
+    updateFilters(newFilters);
   };
 
   return (
@@ -79,6 +105,17 @@ function JobListPage() {
             <button onClick={handleRefresh} className="refresh-btn">
               Обновить
             </button>
+            
+            {/* Отладочная кнопка */}
+            {debugMode && (
+              <button 
+                onClick={() => console.log('Текущие фильтры:', filters, 'Текущие вакансии:', jobs)} 
+                className="debug-btn"
+                style={{marginLeft: '10px', fontSize: '12px'}}
+              >
+                Debug
+              </button>
+            )}
           </div>
           
           <button 
@@ -87,6 +124,21 @@ function JobListPage() {
           >
             {showFilters ? 'Скрыть фильтры' : 'Показать фильтры'}
           </button>
+          
+          {/* Индикатор активной категории */}
+          {filters.category && categoryDetails && (
+            <div className="active-filters">
+              <span className="active-filter">
+                Категория: {categoryDetails.name}
+                <button 
+                  className="remove-filter-btn"
+                  onClick={handleRemoveCategoryFilter}
+                >
+                  ×
+                </button>
+              </span>
+            </div>
+          )}
         </div>
         
         <div className="jobs-content">
@@ -122,26 +174,33 @@ function JobListPage() {
                 <p>{error}</p>
                 <button onClick={() => fetchJobs(currentPage)}>Повторить попытку</button>
               </div>
-            ) : jobs?.length === 0 ? (
+            ) : !Array.isArray(jobs) || jobs.length === 0 ? (
               <div className="no-jobs-message">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
                   <path d="M11 15h2v2h-2v-2zm0-8h2v6h-2V7zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
                 </svg>
                 <p>По вашему запросу вакансий не найдено</p>
-                <p>Попробуйте изменить параметры поиска</p>
-                <button onClick={resetFilters} className="reset-search-btn">Сбросить фильтры</button>
+                {categoryDetails && (
+                  <p>В категории "{categoryDetails.name}" пока нет вакансий или они уже закрыты</p>
+                )}
+                
+                {Object.keys(filters).length > 0 && (
+                  <button onClick={resetFilters} className="reset-search-btn">
+                    Сбросить фильтры
+                  </button>
+                )}
               </div>
             ) : (
               <>
-                {/* Отладочная информация */}
-                <div className="debug-info">
-                  <p>Количество вакансий: {jobs?.length || 0}</p>
-                  <p>Общее количество: {totalJobs}</p>
-                  <p>Текущая страница: {currentPage}</p>
-                </div>
+                {categoryDetails && (
+                  <div className="category-header">
+                    <h2>Вакансии в категории "{categoryDetails.name}"</h2>
+                    <p>Показано {jobs.length} из {totalJobs} вакансий</p>
+                  </div>
+                )}
                 
                 <div className="jobs-list">
-                  {Array.isArray(jobs) && jobs.map(job => (
+                  {jobs.map(job => (
                     <JobCard key={job.id} job={job} />
                   ))}
                 </div>

@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/JobFilters.css';
-
-const jobCategories = [
-  { id: 1, name: 'Frontend-разработка' },
-  { id: 2, name: 'Backend-разработка' },
-  { id: 3, name: 'Дизайн UX/UI' },
-  { id: 4, name: 'Тестирование ПО' },
-  { id: 5, name: 'DevOps и инфраструктура' },
-  { id: 6, name: 'Аналитика данных' },
-  { id: 7, name: 'Кибербезопасность' },
-  { id: 8, name: 'Проектный менеджмент' }
-];
+import { categoriesService } from '../services/categoriesService';
 
 const jobTypes = [
   { value: 'full-time', label: 'Полная занятость' },
@@ -46,7 +36,7 @@ const locations = [
   { value: 'Актобе', label: 'Актобе' }
 ];
 
-export default function JobFilters({ filters, onFilterChange, onResetFilters }) {
+export default function JobFilters({ filters, onFilterChange, onResetFilters, onApplyFilters }) {
   const [collapsed, setCollapsed] = useState({
     category: false,
     jobType: false,
@@ -54,6 +44,26 @@ export default function JobFilters({ filters, onFilterChange, onResetFilters }) 
     salary: false,
     location: false
   });
+  
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // Получаем список категорий из API
+  useEffect(() => {
+    const fetchCategories = async () => {
+      setLoading(true);
+      try {
+        const data = await categoriesService.getCategories();
+        setCategories(Array.isArray(data) ? data : []);
+      } catch (err) {
+        console.error('Ошибка при получении категорий:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchCategories();
+  }, []);
 
   const handleChange = (name, value) => {
     onFilterChange(name, value);
@@ -108,22 +118,27 @@ export default function JobFilters({ filters, onFilterChange, onResetFilters }) 
 
         <div className={`filter-content ${collapsed.category ? 'collapsed' : ''}`}>
           <div className="filter-select">
-            <select
-              value={filters.category || ""}
-              onChange={(e) => handleChange('category', e.target.value)}
-              className="filter-dropdown"
-            >
-              <option value="">Все категории</option>
-              {jobCategories.map(category => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
+            {loading ? (
+              <div className="filter-loading">Загрузка категорий...</div>
+            ) : (
+              <select
+                value={filters.category || ""}
+                onChange={(e) => handleChange('category', e.target.value)}
+                className="filter-dropdown"
+              >
+                <option value="">Все категории</option>
+                {categories.map(category => (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
         </div>
       </div>
 
+      {/* Оставшаяся часть кода без изменений */}
       <div className="filter-divider"></div>
 
       <div className="filter-group">
@@ -277,7 +292,7 @@ export default function JobFilters({ filters, onFilterChange, onResetFilters }) 
       <div className="filter-actions">
         <button 
           className="apply-filters-btn"
-          onClick={() => window.matchMedia("(max-width: 768px)").matches && document.querySelector('.close-filters-btn')?.click()}
+          onClick={onApplyFilters}
         >
           Применить фильтры
         </button>
